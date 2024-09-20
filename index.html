@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Racing+Sans+One&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./css/main.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main>
+      <!-- HEADER  -->
+      <header>
+        <div class="container">
+          <div class="header-container d-flex justify-content-between">
+            <div class="header-left">
+              <div class="header-logo">
+                <a href="">
+                  <img src="./image/Logo.png" alt="" />
+                </a>
+              </div>
+            </div>
+            <div class="header-right d-flex">
+              <ul class="d-none d-lg-flex header-menu">
+                <li><a class="menu-item" href="">Home</a></li>
+                <li><a class="menu-item" href="">Tutorial Video</a></li>
+                <li><a class="menu-item" href="">Contact</a></li>
+              </ul>
+              <div class="language-switcher">
+                <div
+                  class="language"
+                  id="vi-language"
+                  onclick="switchLanguage('en')"
+                >
+                  <img src="image/VN.png" alt="Vietnamese Flag" />
+                  <span>VN</span>
+                </div>
+                <div
+                  class="language"
+                  id="en-language"
+                  onclick="switchLanguage('vi')"
+                  style="display: none"
+                >
+                  <img src="image/EN.png" alt="English Flag" />
+                  <span>EN</span>
+                </div>
+              </div>
+
+              <div class="box-enter-id d-none d-lg-block position-relative">
+                <div class="form-enter-id">
+                  <input
+                    type="text"
+                    class="header-button"
+                    placeholder="Enter your UID"
+                  />
+                  <button
+                    class="position-absolute"
+                    data-bs-toggle="modal"
+                    data-bs-target="#popup-enter-your-id"
+                    aria-controls="popup-enter-your-id"
+                  >
+                    <svg
+                      fill="#fff"
+                      width="20px"
+                      height="20px"
+                      viewBox="0 0 0.375 0.375"
+                      xmlns="http://www.w3.org/2000/svg"
+                      id="arrow"
+                    >
+                      <path
+                        d="M0.207 0.057a0.025 0.025 0 0 1 0.035 0l0.113 0.113a0.025 0.025 0 0 1 0 0.035l-0.113 0.113a0.025 0.025 0 0 1 -0.035 -0.035L0.275 0.213H0.038a0.025 0.025 0 0 1 0 -0.05H0.275L0.207 0.093a0.025 0.025 0 0 1 0 -0.035"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div class="header-action-group">
+                <div
+                  id="menu-mobile-btn"
+                  class="d-block d-xl-none d-lg-none header-action-item"
+                  type="button"
+                  data-bs-toggle="offcanvas"
+                  data-bs-target="#menu-mobile"
+                  aria-controls="menu-mobile"
+                >
+                  <svg
+                    fill="#fff"
+                    width="20px"
+                    height="20px"
+                    viewBox="0 0 25.6 25.6"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M0.675 4.84c-0.205 -0.205 -0.305 -0.465 -0.305 -0.78s0.1 -0.575 0.305 -0.78S1.14 2.975 1.455 2.975h22.81c0.315 0 0.575 0.1 0.78 0.305s0.305 0.465 0.305 0.78 -0.1 0.575 -0.305 0.78 -0.465 0.305 -0.78 0.305H1.455c-0.315 0 -0.575 -0.1 -0.78 -0.305m24.37 7.13c0.205 0.205 0.305 0.465 0.305 0.78s-0.1 0.575 -0.305 0.78 -0.465 0.305 -0.78 0.305H1.455c-0.315 0 -0.575 -0.1 -0.78 -0.305S0.37 13.065 0.37 12.75s0.1 -0.575 0.305 -0.78 0.465 -0.305 0.78 -0.305h22.81c0.315 0 0.575 0.1 0.78 0.305m0 8.685c0.205 0.205 0.305 0.465 0.305 0.78s-0.1 0.575 -0.305 0.78 -0.465 0.305 -0.78 0.305H1.455c-0.315 0 -0.575 -0.1 -0.78 -0.305S0.37 21.75 0.37 21.435s0.1 -0.575 0.305 -0.78S1.14 20.35 1.455 20.35h22.81c0.315 0 0.575 0.105 0.78 0.305"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="offcanvas offcanvas-start"
+            tabindex="-1"
+            id="menu-mobile"
+            aria-labelledby="menu-mobileLabel"
+          >
+            <div class="offcanvas-body">
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              >
+                <svg
+                  width="20px"
+                  height="20px"
+                  viewBox="0 0 0.4 0.4"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill="#fff"
+                    fill-rule="evenodd"
+                    d="M0.282 0.082a0.025 0.025 0 1 1 0.035 0.035L0.235 0.2l0.082 0.082a0.025 0.025 0 0 1 -0.035 0.035L0.2 0.235l-0.082 0.082a0.025 0.025 0 0 1 -0.035 -0.035L0.165 0.2 0.082 0.118a0.025 0.025 0 0 1 0.035 -0.035L0.2 0.165z"
+                  />
+                </svg>
+              </button>
+              <nav class="header-nav-mobile">
+                <ul class="header-menu">
+                  <li><a class="menu-item" href="">Home</a></li>
+                  <li><a class="menu-item" href="">Tutorial Video</a></li>
+                  <li><a class="menu-item" href="">Contact</a></li>
+                </ul>
+              </nav>
+              <div class="d-lg-none d-flex position-relative box-enter-id">
+                <div class="form-enter-id">
+                  <input
+                    type="text"
+                    class="header-button position-absolute"
+                    placeholder="Enter your UID"
+                  />
+                  <button
+                    class="position-absolute"
+                    data-bs-toggle="modal"
+                    data-bs-target="#popup-enter-your-id"
+                    aria-controls="popup-enter-your-id"
+                  >
+                    <svg
+                      fill="#fff"
+                      width="20px"
+                      height="20px"
+                      viewBox="0 0 0.375 0.375"
+                      xmlns="http://www.w3.org/2000/svg"
+                      id="arrow"
+                    >
+                      <path
+                        d="M0.207 0.057a0.025 0.025 0 0 1 0.035 0l0.113 0.113a0.025 0.025 0 0 1 0 0.035l-0.113 0.113a0.025 0.025 0 0 1 -0.035 -0.035L0.275 0.213H0.038a0.025 0.025 0 0 1 0 -0.05H0.275L0.207 0.093a0.025 0.025 0 0 1 0 -0.035"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- BANNER HOME -->
+      <section class="banner-home">
+        <div class="container">
+          <div class="banner-title">All Exchanges</div>
+          <div class="banner-button">
+            <a href="">Join Forex Premium</a>
+            <a href="">Join Crypto Premium</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- TRANDING PLATFORM  -->
+      <section class="trading-platform">
+        <div class="container">
+          <div class="trading-platform-container">
+            <div class="platform-item">
+              <div class="platform-logo">
+                <img class="logo" src="./image/Group 1306.png" alt="" />
+                <button>
+                  <div class="platform-video">
+                    <img src="./image/Youtube 1.png" alt="" />
+                    <div class="video-title">Tutorial Video</div>
+                  </div>
+                </button>
+              </div>
+              <div class="platform-content">
+                <div class="title">Exness</div>
+                <div class="type content">
+                  <div class="content-title">Type:</div>
+                  <div class="content-detail">Cashback Auto Daily</div>
+                </div>
+                <div class="ref content">
+                  <div class="content-title">Ref Code:</div>
+                  <div class="content-detail">
+                    57kbsq9cqa
+                    <svg
+                      width="30px"
+                      height="30px"
+                      viewBox="0 0 0.6 0.6"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="#fff"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M0.15 0.15 0.188 0.112h0.203L0.525 0.247V0.525L0.488 0.563h-0.3L0.15 0.525zm0.338 0.112L0.375 0.15H0.188v0.375h0.3z"
+                      />
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M0.112 0.038 0.075 0.075v0.375l0.038 0.038V0.075h0.241L0.316 0.038z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <div class="line"></div>
+                <div class="backcom content">
+                  <div class="content-title">Backcom</div>
+                  <div class="content-detail">98%</div>
+                </div>
+              </div>
+            </div>
+            <div class="platform-item">
+              <div class="platform-logo">
+                <img class="logo" src="./image/Group 1306.png" alt="" />
+                <button>
+                  <div class="platform-video">
+                    <img src="./image/Youtube 1.png" alt="" />
+                    <div class="video-title">Tutorial Video</div>
+                  </div>
+                </button>
+              </div>
+              <div class="platform-content">
+                <div class="title">Exness</div>
+                <div class="type content">
+                  <div class="content-title">Type:</div>
+                  <div class="content-detail">Cashback Auto Daily</div>
+                </div>
+                <div class="ref content">
+                  <div class="content-title">Ref Code:</div>
+                  <div class="content-detail">
+                    57kbsq9cqa
+                    <svg
+                      width="30px"
+                      height="30px"
+                      viewBox="0 0 0.6 0.6"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="#fff"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M0.15 0.15 0.188 0.112h0.203L0.525 0.247V0.525L0.488 0.563h-0.3L0.15 0.525zm0.338 0.112L0.375 0.15H0.188v0.375h0.3z"
+                      />
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M0.112 0.038 0.075 0.075v0.375l0.038 0.038V0.075h0.241L0.316 0.038z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <div class="line"></div>
+                <div class="backcom content">
+                  <div class="content-title">Backcom</div>
+                  <div class="content-detail">98%</div>
+                </div>
+              </div>
+            </div>
+            <div class="platform-item">
+              <div class="platform-logo">
+                <img class="logo" src="./image/Group 1306.png" alt="" />
+                <button>
+                  <div class="platform-video">
+                    <img src="./image/Youtube 1.png" alt="" />
+                    <div class="video-title">Tutorial Video</div>
+                  </div>
+                </button>
+              </div>
+              <div class="platform-content">
+                <div class="title">Exness</div>
+                <div class="type content">
+                  <div class="content-title">Type:</div>
+                  <div class="content-detail">Cashback Auto Daily</div>
+                </div>
+                <div class="ref content">
+                  <div class="content-title">Ref Code:</div>
+                  <div class="content-detail">
+                    57kbsq9cqa
+                    <svg
+                      width="30px"
+                      height="30px"
+                      viewBox="0 0 0.6 0.6"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="#fff"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M0.15 0.15 0.188 0.112h0.203L0.525 0.247V0.525L0.488 0.563h-0.3L0.15 0.525zm0.338 0.112L0.375 0.15H0.188v0.375h0.3z"
+                      />
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M0.112 0.038 0.075 0.075v0.375l0.038 0.038V0.075h0.241L0.316 0.038z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <div class="line"></div>
+                <div class="backcom content">
+                  <div class="content-title">Backcom</div>
+                  <div class="content-detail">98%</div>
+                </div>
+              </div>
+            </div>
+            <div class="platform-item">
+              <div class="platform-logo">
+                <img class="logo" src="./image/Group 1306.png" alt="" />
+                <button>
+                  <div class="platform-video">
+                    <img src="./image/Youtube 1.png" alt="" />
+                    <div class="video-title">Tutorial Video</div>
+                  </div>
+                </button>
+              </div>
+              <div class="platform-content">
+                <div class="title">Exness</div>
+                <div class="type content">
+                  <div class="content-title">Type:</div>
+                  <div class="content-detail">Cashback Auto Daily</div>
+                </div>
+                <div class="ref content">
+                  <div class="content-title">Ref Code:</div>
+                  <div class="content-detail">
+                    57kbsq9cqa
+                    <svg
+                      width="30px"
+                      height="30px"
+                      viewBox="0 0 0.6 0.6"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="#fff"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M0.15 0.15 0.188 0.112h0.203L0.525 0.247V0.525L0.488 0.563h-0.3L0.15 0.525zm0.338 0.112L0.375 0.15H0.188v0.375h0.3z"
+                      />
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M0.112 0.038 0.075 0.075v0.375l0.038 0.038V0.075h0.241L0.316 0.038z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <div class="line"></div>
+                <div class="backcom content">
+                  <div class="content-title">Backcom</div>
+                  <div class="content-detail">98%</div>
+                </div>
+              </div>
+            </div>
+            <div class="platform-item">
+              <div class="platform-logo">
+                <img class="logo" src="./image/Group 1306.png" alt="" />
+                <button>
+                  <div class="platform-video">
+                    <img src="./image/Youtube 1.png" alt="" />
+                    <div class="video-title">Tutorial Video</div>
+                  </div>
+                </button>
+              </div>
+              <div class="platform-content">
+                <div class="title">Exness</div>
+                <div class="type content">
+                  <div class="content-title">Type:</div>
+                  <div class="content-detail">Cashback Auto Daily</div>
+                </div>
+                <div class="ref content">
+                  <div class="content-title">Ref Code:</div>
+                  <div class="content-detail">
+                    57kbsq9cqa
+                    <svg
+                      width="30px"
+                      height="30px"
+                      viewBox="0 0 0.6 0.6"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="#fff"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M0.15 0.15 0.188 0.112h0.203L0.525 0.247V0.525L0.488 0.563h-0.3L0.15 0.525zm0.338 0.112L0.375 0.15H0.188v0.375h0.3z"
+                      />
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M0.112 0.038 0.075 0.075v0.375l0.038 0.038V0.075h0.241L0.316 0.038z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <div class="line"></div>
+                <div class="backcom content">
+                  <div class="content-title">Backcom</div>
+                  <div class="content-detail">98%</div>
+                </div>
+              </div>
+            </div>
+            <div class="platform-item">
+              <div class="platform-logo">
+                <img class="logo" src="./image/Group 1306.png" alt="" />
+                <button>
+                  <div class="platform-video">
+                    <img src="./image/Youtube 1.png" alt="" />
+                    <div class="video-title">Tutorial Video</div>
+                  </div>
+                </button>
+              </div>
+              <div class="platform-content">
+                <div class="title">Exness</div>
+                <div class="type content">
+                  <div class="content-title">Type:</div>
+                  <div class="content-detail">Cashback Auto Daily</div>
+                </div>
+                <div class="ref content">
+                  <div class="content-title">Ref Code:</div>
+                  <div class="content-detail">
+                    57kbsq9cqa
+                    <svg
+                      width="30px"
+                      height="30px"
+                      viewBox="0 0 0.6 0.6"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="#fff"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M0.15 0.15 0.188 0.112h0.203L0.525 0.247V0.525L0.488 0.563h-0.3L0.15 0.525zm0.338 0.112L0.375 0.15H0.188v0.375h0.3z"
+                      />
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M0.112 0.038 0.075 0.075v0.375l0.038 0.038V0.075h0.241L0.316 0.038z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <div class="line"></div>
+                <div class="backcom content">
+                  <div class="content-title">Backcom</div>
+                  <div class="content-detail">98%</div>
+                </div>
+              </div>
+            </div>
+            <div class="platform-item">
+              <div class="platform-logo">
+                <img class="logo" src="./image/Group 1306.png" alt="" />
+                <button>
+                  <div class="platform-video">
+                    <img src="./image/Youtube 1.png" alt="" />
+                    <div class="video-title">Tutorial Video</div>
+                  </div>
+                </button>
+              </div>
+              <div class="platform-content">
+                <div class="title">Exness</div>
+                <div class="type content">
+                  <div class="content-title">Type:</div>
+                  <div class="content-detail">Cashback Auto Daily</div>
+                </div>
+                <div class="ref content">
+                  <div class="content-title">Ref Code:</div>
+                  <div class="content-detail">
+                    57kbsq9cqa
+                    <svg
+                      width="30px"
+                      height="30px"
+                      viewBox="0 0 0.6 0.6"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="#fff"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M0.15 0.15 0.188 0.112h0.203L0.525 0.247V0.525L0.488 0.563h-0.3L0.15 0.525zm0.338 0.112L0.375 0.15H0.188v0.375h0.3z"
+                      />
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M0.112 0.038 0.075 0.075v0.375l0.038 0.038V0.075h0.241L0.316 0.038z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <div class="line"></div>
+                <div class="backcom content">
+                  <div class="content-title">Backcom</div>
+                  <div class="content-detail">98%</div>
+                </div>
+              </div>
+            </div>
+            <div class="platform-item">
+              <div class="platform-logo">
+                <img class="logo" src="./image/Group 1306.png" alt="" />
+                <button>
+                  <div class="platform-video">
+                    <img src="./image/Youtube 1.png" alt="" />
+                    <div class="video-title">Tutorial Video</div>
+                  </div>
+                </button>
+              </div>
+              <div class="platform-content">
+                <div class="title">Exness</div>
+                <div class="type content">
+                  <div class="content-title">Type:</div>
+                  <div class="content-detail">Cashback Auto Daily</div>
+                </div>
+                <div class="ref content">
+                  <div class="content-title">Ref Code:</div>
+                  <div class="content-detail">
+                    57kbsq9cqa
+                    <svg
+                      width="30px"
+                      height="30px"
+                      viewBox="0 0 0.6 0.6"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="#fff"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M0.15 0.15 0.188 0.112h0.203L0.525 0.247V0.525L0.488 0.563h-0.3L0.15 0.525zm0.338 0.112L0.375 0.15H0.188v0.375h0.3z"
+                      />
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M0.112 0.038 0.075 0.075v0.375l0.038 0.038V0.075h0.241L0.316 0.038z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <div class="line"></div>
+                <div class="backcom content">
+                  <div class="content-title">Backcom</div>
+                  <div class="content-detail">98%</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SERVICE  -->
+      <section class="service">
+        <div class="container">
+          <div class="service-title">
+            <div class="line"></div>
+            <div class="title">Why choose us?</div>
+          </div>
+          <div class="service-banner">
+            <div class="banner-img">
+              <img src="./image/robot.png" alt="" />
+            </div>
+            <div class="banner-content">
+              <div class="title">
+                Highest transaction commission refund in the market
+              </div>
+              <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry.Lorem Ipsum is simply dummy .
+              </p>
+              <ul>
+                <li>
+                  <svg
+                    width="30px"
+                    height="30px"
+                    viewBox="0 0 0.9 0.9"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M0.339 0.125a0.487 0.487 0 0 1 0.223 0 0.286 0.286 0 0 1 0.213 0.213 0.487 0.487 0 0 1 0 0.223 0.286 0.286 0 0 1 -0.213 0.213 0.487 0.487 0 0 1 -0.223 0 0.286 0.286 0 0 1 -0.213 -0.213 0.487 0.487 0 0 1 0 -0.223A0.286 0.286 0 0 1 0.339 0.125m0.226 0.267a0.022 0.022 0 1 0 -0.032 -0.029l-0.11 0.118 -0.056 -0.056a0.022 0.022 0 0 0 -0.03 0.03l0.072 0.072a0.022 0.022 0 0 0 0.031 -0.001z"
+                      fill="#2FAB73"
+                    />
+                  </svg>
+                  <p>Highest commission refund</p>
+                </li>
+                <li>
+                  <svg
+                    width="30px"
+                    height="30px"
+                    viewBox="0 0 0.9 0.9"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M0.339 0.125a0.487 0.487 0 0 1 0.223 0 0.286 0.286 0 0 1 0.213 0.213 0.487 0.487 0 0 1 0 0.223 0.286 0.286 0 0 1 -0.213 0.213 0.487 0.487 0 0 1 -0.223 0 0.286 0.286 0 0 1 -0.213 -0.213 0.487 0.487 0 0 1 0 -0.223A0.286 0.286 0 0 1 0.339 0.125m0.226 0.267a0.022 0.022 0 1 0 -0.032 -0.029l-0.11 0.118 -0.056 -0.056a0.022 0.022 0 0 0 -0.03 0.03l0.072 0.072a0.022 0.022 0 0 0 0.031 -0.001z"
+                      fill="#2FAB73"
+                    />
+                  </svg>
+                  <p>Supports all the largest exchanges</p>
+                </li>
+                <li>
+                  <svg
+                    width="30px"
+                    height="30px"
+                    viewBox="0 0 0.9 0.9"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M0.339 0.125a0.487 0.487 0 0 1 0.223 0 0.286 0.286 0 0 1 0.213 0.213 0.487 0.487 0 0 1 0 0.223 0.286 0.286 0 0 1 -0.213 0.213 0.487 0.487 0 0 1 -0.223 0 0.286 0.286 0 0 1 -0.213 -0.213 0.487 0.487 0 0 1 0 -0.223A0.286 0.286 0 0 1 0.339 0.125m0.226 0.267a0.022 0.022 0 1 0 -0.032 -0.029l-0.11 0.118 -0.056 -0.056a0.022 0.022 0 0 0 -0.03 0.03l0.072 0.072a0.022 0.022 0 0 0 0.031 -0.001z"
+                      fill="#2FAB73"
+                    />
+                  </svg>
+                  <p>Lorem Ipsum is simply</p>
+                </li>
+                <li>
+                  <svg
+                    width="30px"
+                    height="30px"
+                    viewBox="0 0 0.9 0.9"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M0.339 0.125a0.487 0.487 0 0 1 0.223 0 0.286 0.286 0 0 1 0.213 0.213 0.487 0.487 0 0 1 0 0.223 0.286 0.286 0 0 1 -0.213 0.213 0.487 0.487 0 0 1 -0.223 0 0.286 0.286 0 0 1 -0.213 -0.213 0.487 0.487 0 0 1 0 -0.223A0.286 0.286 0 0 1 0.339 0.125m0.226 0.267a0.022 0.022 0 1 0 -0.032 -0.029l-0.11 0.118 -0.056 -0.056a0.022 0.022 0 0 0 -0.03 0.03l0.072 0.072a0.022 0.022 0 0 0 0.031 -0.001z"
+                      fill="#2FAB73"
+                    />
+                  </svg>
+                  <p>Lorem Ipsum is simply</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="service-result">
+            <div class="result-item">
+              <div class="item-img">
+                <img src="./image/user.png" alt="" />
+              </div>
+              <div class="item-content">
+                <div class="title">6000+</div>
+                <div class="content">Users</div>
+              </div>
+            </div>
+            <div class="result-item">
+              <div class="item-img">
+                <img src="./image/location.png" alt="" />
+              </div>
+              <div class="item-content">
+                <div class="title">5+</div>
+                <div class="content">Countries</div>
+              </div>
+            </div>
+            <div class="result-item">
+              <div class="item-img">
+                <img src="./image/Server.png" alt="" />
+              </div>
+              <div class="item-content">
+                <div class="title">10+</div>
+                <div class="content">Exchanges</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PARTNERS  -->
+      <section class="service partners">
+        <div class="container">
+          <div class="service-title">
+            <div class="line"></div>
+            <div class="title">Partners</div>
+          </div>
+          <div class="partners-content">
+            <div class="partner-item">
+              <img src="./image/Group 1306 (4).png" alt="" />
+            </div>
+            <div class="partner-item">
+              <img src="./image/Group 1306 (2).png" alt="" />
+            </div>
+            <div class="partner-item">
+              <img src="./image/Group 1306 (6).png" alt="" />
+            </div>
+            <div class="partner-item">
+              <img src="./image/Group 1306 (1).png" alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FEEDBACK  -->
+      <section class="service feedback">
+        <div class="container">
+          <div class="service-title">
+            <div class="line"></div>
+            <div class="title">Feedback</div>
+          </div>
+          <div class="feedback-container">
+            <div class="swiper feedback-slider">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="feedback-item">
+                    <div class="feedback-img">
+                      <img src="./image/Proof1.png" alt="" />
+                    </div>
+                    <div class="feedback-content">
+                      <div class="feedback-id">
+                        <img src="./image/commentIcon.png" alt="" />
+                        <div class="id">
+                          UID: <span id="id_feedback">12345678</span>
+                        </div>
+                      </div>
+                      <div class="content">
+                        Lần đầu tiên trong 6 năm sự nghiệp trading, tôi nhận lại
+                        được tiền phí giao dịch như này. Team Bi Cần Thơ rất uy
+                        tín!
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="feedback-item">
+                    <div class="feedback-img">
+                      <img src="./image/Proof1.png" alt="" />
+                    </div>
+                    <div class="feedback-content">
+                      <div class="feedback-id">
+                        <img src="./image/commentIcon.png" alt="" />
+                        <div class="id">
+                          UID: <span id="id_feedback">12345678</span>
+                        </div>
+                      </div>
+                      <div class="content">
+                        Lần đầu tiên trong 6 năm sự nghiệp trading, tôi nhận lại
+                        được tiền phí giao dịch như này. Team Bi Cần Thơ rất uy
+                        tín!
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="feedback-item">
+                    <div class="feedback-img">
+                      <img src="./image/Proof1.png" alt="" />
+                    </div>
+                    <div class="feedback-content">
+                      <div class="feedback-id">
+                        <img src="./image/commentIcon.png" alt="" />
+                        <div class="id">
+                          UID: <span id="id_feedback">12345678</span>
+                        </div>
+                      </div>
+                      <div class="content">
+                        Lần đầu tiên trong 6 năm sự nghiệp trading, tôi nhận lại
+                        được tiền phí giao dịch như này. Team Bi Cần Thơ rất uy
+                        tín!
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="feedback-item">
+                    <div class="feedback-img">
+                      <img src="./image/Proof1.png" alt="" />
+                    </div>
+                    <div class="feedback-content">
+                      <div class="feedback-id">
+                        <img src="./image/commentIcon.png" alt="" />
+                        <div class="id">
+                          UID: <span id="id_feedback">12345678</span>
+                        </div>
+                      </div>
+                      <div class="content">
+                        Lần đầu tiên trong 6 năm sự nghiệp trading, tôi nhận lại
+                        được tiền phí giao dịch như này. Team Bi Cần Thơ rất uy
+                        tín!
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="feedback-item">
+                    <div class="feedback-img">
+                      <img src="./image/Proof1.png" alt="" />
+                    </div>
+                    <div class="feedback-content">
+                      <div class="feedback-id">
+                        <img src="./image/commentIcon.png" alt="" />
+                        <div class="id">
+                          UID: <span id="id_feedback">12345678</span>
+                        </div>
+                      </div>
+                      <div class="content">
+                        Lần đầu tiên trong 6 năm sự nghiệp trading, tôi nhận lại
+                        được tiền phí giao dịch như này. Team Bi Cần Thơ rất uy
+                        tín!
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="feedback-item">
+                    <div class="feedback-img">
+                      <img src="./image/Proof1.png" alt="" />
+                    </div>
+                    <div class="feedback-content">
+                      <div class="feedback-id">
+                        <img src="./image/commentIcon.png" alt="" />
+                        <div class="id">
+                          UID: <span id="id_feedback">12345678</span>
+                        </div>
+                      </div>
+                      <div class="content">
+                        Lần đầu tiên trong 6 năm sự nghiệp trading, tôi nhận lại
+                        được tiền phí giao dịch như này. Team Bi Cần Thơ rất uy
+                        tín!
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="feedback-item">
+                    <div class="feedback-img">
+                      <img src="./image/Proof1.png" alt="" />
+                    </div>
+                    <div class="feedback-content">
+                      <div class="feedback-id">
+                        <img src="./image/commentIcon.png" alt="" />
+                        <div class="id">
+                          UID: <span id="id_feedback">12345678</span>
+                        </div>
+                      </div>
+                      <div class="content">
+                        Lần đầu tiên trong 6 năm sự nghiệp trading, tôi nhận lại
+                        được tiền phí giao dịch như này. Team Bi Cần Thơ rất uy
+                        tín!
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="feedback-item">
+                    <div class="feedback-img">
+                      <img src="./image/Proof1.png" alt="" />
+                    </div>
+                    <div class="feedback-content">
+                      <div class="feedback-id">
+                        <img src="./image/commentIcon.png" alt="" />
+                        <div class="id">
+                          UID: <span id="id_feedback">12345678</span>
+                        </div>
+                      </div>
+                      <div class="content">
+                        Lần đầu tiên trong 6 năm sự nghiệp trading, tôi nhận lại
+                        được tiền phí giao dịch như này. Team Bi Cần Thơ rất uy
+                        tín!
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-button-prev">
+              <svg
+                width="20px"
+                height="20px"
+                viewBox="0 0 1.2 1.2"
+                version="1"
+                xmlns="http://www.w3.org/2000/svg"
+                enable-background="new 0 0 48 48"
+              >
+                <path
+                  fill="#fff"
+                  points="30.9,43 34,39.9 18.1,24 34,8.1 30.9,5 12,24"
+                  d="M0.772 1.075L0.85 0.998L0.453 0.6L0.85 0.203L0.772 0.125L0.3 0.6Z"
+                />
+              </svg>
+            </div>
+            <div class="swiper-button-next">
+              <svg
+                width="20px"
+                height="20px"
+                viewBox="0 0 1.2 1.2"
+                version="1"
+                xmlns="http://www.w3.org/2000/svg"
+                enable-background="new 0 0 48 48"
+              >
+                <path
+                  fill="#fff"
+                  points="17.1,5 14,8.1 29.9,24 14,39.9 17.1,43 36,24"
+                  d="M0.428 0.125L0.35 0.203L0.748 0.6L0.35 0.998L0.428 1.075L0.9 0.6Z"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MODAL ENTER YOUR ID -->
+      <section
+        class="modal fade popup-enter"
+        id="popup-enter-your-id"
+        tabindex="-1"
+        aria-hidden="true"
+      >
+        <div class="container">
+          <div class="modal-dialog">
+            <div class="modal-content popup-enter-modal">
+              <button
+                type="button"
+                class="btn-close popup-enter-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              >
+                <svg
+                  fill="#fff"
+                  width="30px"
+                  height="30px"
+                  viewBox="-0.131 0 0.712 0.712"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="cf-icon-svg"
+                >
+                  <path
+                    d="M0.427 0.512a0.039 0.039 0 0 1 -0.055 0.054L0.225 0.419 0.078 0.566A0.039 0.039 0 1 1 0.022 0.512L0.17 0.364 0.022 0.217A0.039 0.039 0 1 1 0.078 0.162L0.225 0.31 0.372 0.164a0.039 0.039 0 0 1 0.055 0.055L0.28 0.364z"
+                  />
+                </svg>
+              </button>
+              <div class="popup-enter-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/iw-a-ywJzew?si=08yzAR2I8R-OphIS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- FOOTER  -->
+      <footer>
+        <div class="container">
+          <div class="footer-container">
+            <div class="footer-left">
+              <div class="footer-info">
+                <div class="footer-item footer-contact">
+                  <div class="title">Contact</div>
+                  <ul>
+                    <li>Telegram: <a href="">@BiCanTho</a></li>
+                    <li>Technical Support: <a href="">@TuanAnhInvest</a></li>
+                  </ul>
+                </div>
+                <div class="footer-item footer-address">
+                  <div class="title">Address</div>
+                  <ul>
+                    <li>Ho Chi Minh City</li>
+                  </ul>
+                </div>
+                <div class="footer-item footer-social">
+                  <div class="title">Social</div>
+                  <ul>
+                    <li><a href="">Twitter</a></li>
+                    <li><a href="">Telegram</a></li>
+                    <li><a href="">Youtube</a></li>
+                    <li><a href="">Facebook</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="footer-bottom">
+                <div class="rights">
+                  © 2024 Cahback Exchange. All Rights Reserved.
+                </div>
+              </div>
+            </div>
+            <div class="footer-logo">
+              <a href="">
+                <img src="./image/Logo Wrapper.png" alt="" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script> -->
+    <script src="swiper/swiper-bundle.min.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
