@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Racing+Sans+One&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./css/main.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main>
+      <!-- HEADER  -->
+      <header>
+        <div class="container">
+          <div class="header-container d-flex justify-content-between">
+            <div class="header-left">
+              <div class="header-logo">
+                <a href="">
+                  <img src="./image/Logo.png" alt="" />
+                </a>
+              </div>
+            </div>
+            <div class="header-right d-flex">
+              <ul class="d-none d-lg-flex header-menu">
+                <li><a class="menu-item" href="">Home</a></li>
+                <li><a class="menu-item" href="">Tutorial Video</a></li>
+                <li><a class="menu-item" href="">Contact</a></li>
+              </ul>
+              <div class="language-switcher">
+                <div
+                  class="language"
+                  id="vi-language"
+                  onclick="switchLanguage('en')"
+                >
+                  <img src="image/VN.png" alt="Vietnamese Flag" />
+                  <span>VN</span>
+                </div>
+                <div
+                  class="language"
+                  id="en-language"
+                  onclick="switchLanguage('vi')"
+                  style="display: none"
+                >
+                  <img src="image/EN.png" alt="English Flag" />
+                  <span>EN</span>
+                </div>
+              </div>
+
+              <div class="box-enter-id d-none d-lg-block position-relative">
+                <div class="form-enter-id">
+                  <input
+                    type="text"
+                    class="header-button"
+                    placeholder="Enter your UID"
+                  />
+                  <button
+                    class="position-absolute"
+                    data-bs-toggle="modal"
+                    data-bs-target="#popup-enter-your-id"
+                    aria-controls="popup-enter-your-id"
+                  >
+                    <svg
+                      fill="#fff"
+                      width="20px"
+                      height="20px"
+                      viewBox="0 0 0.375 0.375"
+                      xmlns="http://www.w3.org/2000/svg"
+                      id="arrow"
+                    >
+                      <path
+                        d="M0.207 0.057a0.025 0.025 0 0 1 0.035 0l0.113 0.113a0.025 0.025 0 0 1 0 0.035l-0.113 0.113a0.025 0.025 0 0 1 -0.035 -0.035L0.275 0.213H0.038a0.025 0.025 0 0 1 0 -0.05H0.275L0.207 0.093a0.025 0.025 0 0 1 0 -0.035"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div class="header-action-group">
+                <div
+                  id="menu-mobile-btn"
+                  class="d-block d-xl-none d-lg-none header-action-item"
+                  type="button"
+                  data-bs-toggle="offcanvas"
+                  data-bs-target="#menu-mobile"
+                  aria-controls="menu-mobile"
+                >
+                  <svg
+                    fill="#fff"
+                    width="20px"
+                    height="20px"
+                    viewBox="0 0 25.6 25.6"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M0.675 4.84c-0.205 -0.205 -0.305 -0.465 -0.305 -0.78s0.1 -0.575 0.305 -0.78S1.14 2.975 1.455 2.975h22.81c0.315 0 0.575 0.1 0.78 0.305s0.305 0.465 0.305 0.78 -0.1 0.575 -0.305 0.78 -0.465 0.305 -0.78 0.305H1.455c-0.315 0 -0.575 -0.1 -0.78 -0.305m24.37 7.13c0.205 0.205 0.305 0.465 0.305 0.78s-0.1 0.575 -0.305 0.78 -0.465 0.305 -0.78 0.305H1.455c-0.315 0 -0.575 -0.1 -0.78 -0.305S0.37 13.065 0.37 12.75s0.1 -0.575 0.305 -0.78 0.465 -0.305 0.78 -0.305h22.81c0.315 0 0.575 0.1 0.78 0.305m0 8.685c0.205 0.205 0.305 0.465 0.305 0.78s-0.1 0.575 -0.305 0.78 -0.465 0.305 -0.78 0.305H1.455c-0.315 0 -0.575 -0.1 -0.78 -0.305S0.37 21.75 0.37 21.435s0.1 -0.575 0.305 -0.78S1.14 20.35 1.455 20.35h22.81c0.315 0 0.575 0.105 0.78 0.305"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="offcanvas offcanvas-start"
+            tabindex="-1"
+            id="menu-mobile"
+            aria-labelledby="menu-mobileLabel"
+          >
+            <div class="offcanvas-body">
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              >
+                <svg
+                  width="20px"
+                  height="20px"
+                  viewBox="0 0 0.4 0.4"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill="#fff"
+                    fill-rule="evenodd"
+                    d="M0.282 0.082a0.025 0.025 0 1 1 0.035 0.035L0.235 0.2l0.082 0.082a0.025 0.025 0 0 1 -0.035 0.035L0.2 0.235l-0.082 0.082a0.025 0.025 0 0 1 -0.035 -0.035L0.165 0.2 0.082 0.118a0.025 0.025 0 0 1 0.035 -0.035L0.2 0.165z"
+                  />
+                </svg>
+              </button>
+              <nav class="header-nav-mobile">
+                <ul class="header-menu">
+                  <li><a class="menu-item" href="">Home</a></li>
+                  <li><a class="menu-item" href="">Tutorial Video</a></li>
+                  <li><a class="menu-item" href="">Contact</a></li>
+                </ul>
+              </nav>
+              <div class="d-lg-none d-flex position-relative box-enter-id">
+                <div class="form-enter-id">
+                  <input
+                    type="text"
+                    class="header-button position-absolute"
+                    placeholder="Enter your UID"
+                  />
+                  <button
+                    class="position-absolute"
+                    data-bs-toggle="modal"
+                    data-bs-target="#popup-enter-your-id"
+                    aria-controls="popup-enter-your-id"
+                  >
+                    <svg
+                      fill="#fff"
+                      width="20px"
+                      height="20px"
+                      viewBox="0 0 0.375 0.375"
+                      xmlns="http://www.w3.org/2000/svg"
+                      id="arrow"
+                    >
+                      <path
+                        d="M0.207 0.057a0.025 0.025 0 0 1 0.035 0l0.113 0.113a0.025 0.025 0 0 1 0 0.035l-0.113 0.113a0.025 0.025 0 0 1 -0.035 -0.035L0.275 0.213H0.038a0.025 0.025 0 0 1 0 -0.05H0.275L0.207 0.093a0.025 0.025 0 0 1 0 -0.035"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section class="play-list service">
+        <div class="container">
+          <div class="service-title">
+            <div class="line"></div>
+            <div class="title">Playlist</div>
+          </div>
+          <div class="play-list-content">
+            <div class="item-content">
+                <div class="box-img">
+                    <a href="">
+                        <img src="./image/Binance-11-1.jpg" alt="">
+                    </a>
+                </div>
+                <div class="box-title">
+                    <div class="title">
+                        Hướng dẫn sàn Exness từ A đến Z
+                    </div>
+                     <div class="view-all">
+                        <a href="">Xem toàn bộ danh sách phát</a>
+                    </div>
+                </div>
+            </div>
+            <div class="item-content">
+                <div class="box-img">
+                    <img src="./image/Binance-11-1.jpg" alt="">
+                </div>
+                <div class="box-title">
+                    <div class="title">
+                        Hướng dẫn sàn Binance từ A đến Z
+                    </div>
+                    <div class="view-all">
+                        <a href="">Xem toàn bộ danh sách phát</a>
+                    </div>
+                </div>
+            </div>
+            <div class="item-content">
+                <div class="box-img">
+                    <img src="./image/Binance-11-1.jpg" alt="">
+                </div>
+                <div class="box-title">
+                    <div class="title">
+                        Hướng dẫn sàn Binance từ A đến Z
+                    </div>
+                     <div class="view-all">
+                        <a href="">Xem toàn bộ danh sách phát</a>
+                    </div>
+                </div>
+            </div>
+            <div class="item-content">
+                <div class="box-img">
+                    <img src="./image/Binance-11-1.jpg" alt="">
+                </div>
+                <div class="box-title">
+                    <div class="title">
+                        Hướng dẫn sàn Binance từ A đến Z
+                    </div>
+                     <div class="view-all">
+                        <a href="">Xem toàn bộ danh sách phát</a>
+                    </div>
+                </div>
+            </div>
+            <div class="item-content">
+                <div class="box-img">
+                    <img src="./image/Binance-11-1.jpg" alt="">
+                </div>
+                <div class="box-title">
+                    <div class="title">
+                        Hướng dẫn sàn Binance từ A đến Z
+                    </div>
+                     <div class="view-all">
+                        <a href="">Xem toàn bộ danh sách phát</a>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MODAL ENTER YOUR ID -->
+      <section
+        class="modal fade popup-enter"
+        id="popup-enter-your-id"
+        tabindex="-1"
+        aria-hidden="true"
+      >
+        <div class="container">
+          <div class="modal-dialog">
+            <div class="modal-content popup-enter-modal">
+              <button
+                type="button"
+                class="btn-close popup-enter-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              >
+                <svg
+                  fill="#fff"
+                  width="30px"
+                  height="30px"
+                  viewBox="-0.131 0 0.712 0.712"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="cf-icon-svg"
+                >
+                  <path
+                    d="M0.427 0.512a0.039 0.039 0 0 1 -0.055 0.054L0.225 0.419 0.078 0.566A0.039 0.039 0 1 1 0.022 0.512L0.17 0.364 0.022 0.217A0.039 0.039 0 1 1 0.078 0.162L0.225 0.31 0.372 0.164a0.039 0.039 0 0 1 0.055 0.055L0.28 0.364z"
+                  />
+                </svg>
+              </button>
+              <div class="popup-enter-container">
+                <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/iw-a-ywJzew?si=08yzAR2I8R-OphIS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+                <div class="popup-title">Your commission</div>
+                <div class="popup-enter-content">
+                  <div class="content-left">
+                    <div class="content-img">
+                      <img src="./image/Group 1306 (7).png" alt="" />
+                    </div>
+                    <a href="">Join Premium</a>
+                  </div>
+                  <div class="content-right">
+                    <div class="item-right">
+                      <div class="title">UID:</div>
+                      <div class="content">154648844</div>
+                    </div>
+                    <div class="item-right">
+                      <div class="title">Exchange:</div>
+                      <div class="content">BINANCE</div>
+                    </div>
+                    <div class="item-right">
+                      <div class="title">Your trading volume today:</div>
+                      <div class="content">$1.568.122</div>
+                    </div>
+                    <div class="item-right">
+                      <div class="title">Your trading volume this month:</div>
+                      <div class="content">$15.065.245</div>
+                    </div>
+                    <div class="item-right">
+                      <div class="title">
+                        Commission amount you receive today:
+                      </div>
+                      <div class="content">$124,15</div>
+                    </div>
+                    <div class="item-right">
+                      <div class="title">
+                        The amount of commission you receive this month:
+                      </div>
+                      <div class="content">$1.264,35</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FOOTER  -->
+      <footer>
+        <div class="container">
+          <div class="footer-container">
+            <div class="footer-left">
+              <div class="footer-info">
+                <div class="footer-item footer-contact">
+                  <div class="title">Contact</div>
+                  <ul>
+                    <li>Telegram: <a href="">@BiCanTho</a></li>
+                    <li>Technical Support: <a href="">@TuanAnhInvest</a></li>
+                  </ul>
+                </div>
+                <div class="footer-item footer-address">
+                  <div class="title">Address</div>
+                  <ul>
+                    <li>Ho Chi Minh City</li>
+                  </ul>
+                </div>
+                <div class="footer-item footer-social">
+                  <div class="title">Social</div>
+                  <ul>
+                    <li><a href="">Twitter</a></li>
+                    <li><a href="">Telegram</a></li>
+                    <li><a href="">Youtube</a></li>
+                    <li><a href="">Facebook</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="footer-bottom">
+                <div class="rights">
+                  © 2024 Cahback Exchange. All Rights Reserved.
+                </div>
+              </div>
+            </div>
+            <div class="footer-logo">
+              <a href="">
+                <img src="./image/Logo Wrapper.png" alt="" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script> -->
+    <script src="swiper/swiper-bundle.min.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
