@@ -245,8 +245,8 @@ header .language.active {
   margin-top: 30px;
 }
 .banner-home .banner-title {
-  font-family: "Racing Sans One", sans-serif;
-  font-weight: 400;
+  font-family: "Prompt", sans-serif;
+  font-weight: 800;
   font-style: normal;
   font-size: 35px;
   text-align: center;
@@ -393,9 +393,11 @@ header .language.active {
   .platform-item
   .platform-content
   .title {
-  font-family: "Racing Sans One", sans-serif;
-  font-size: 36px;
-  text-align: center;
+    font-family: "Prompt", sans-serif;
+    font-size: 34px;
+    text-align: center;
+    font-weight: 500;
+    margin: 10px 5px;
 }
 .trading-platform
   .trading-platform-container
@@ -519,8 +521,9 @@ header .language.active {
 }
 .service .service-title .title {
   font-size: 38px;
-  font-family: "Racing Sans One", sans-serif;
+  font-family: "Prompt", sans-serif;
   line-height: 50px;
+  font-weight: 700;
 }
 .service .service-banner {
   display: flex;
@@ -544,7 +547,7 @@ header .language.active {
 .service .service-banner .banner-content .title {
   font-size: 20px;
   line-height: 160%;
-  font-family: "Inter", sans-serif;
+  font-family: "Prompt", sans-serif;
   letter-spacing: 1px;
   font-weight: 700;
 }
@@ -902,7 +905,7 @@ footer .footer-container .footer-item ul li {
   background: transparent;
 }
 .popup-enter .popup-enter-container .popup-title {
-  font-family: "Racing Sans One", sans-serif;
+  font-family: "Prompt", sans-serif;
   text-align: center;
   font-size: 32px;
 }
@@ -933,7 +936,7 @@ footer .footer-container .footer-item ul li {
   display: block;
   margin-top: 20px;
   padding: 3px;
-  font-family: "Racing Sans One", sans-serif;
+  font-family: "Prompt", sans-serif;
   font-size: 20px;
   text-align: center;
   border-radius: 20px;
